@@ -34,9 +34,17 @@ class App extends Component {
   }
 
   render() {
+    const style = {
+      backgroundColor: 'grey',
+      font: 'inherit',
+      border: '1px solid red',
+      padding: '8px',
+      cursor: 'pointer'
+    };
+
     return (
       <div className="App">
-      <button onClick={() => this.userNameHandler('JB')}>Change UserName</button>
+      <button style={style} onClick={() => this.userNameHandler('JB')}>Change UserName</button>
        <UserInput 
        name={this.state.userinput[0].name} 
        changed={this.newUserNameHandler}/>
