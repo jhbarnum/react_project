@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import UserInput from './UserInput/UserInput.js';
-import UserOutput from './UserOutput/UserOutput';
+import UserOutput from './UserOutput/UserOutput.js';
 
 
 
