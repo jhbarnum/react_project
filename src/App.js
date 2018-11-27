@@ -41,6 +41,7 @@ class App extends Component {
   }
 
   render() {
+
     const style = {
       backgroundColor: 'grey',
       font: 'inherit',
@@ -49,25 +50,30 @@ class App extends Component {
       cursor: 'pointer'
     };
 
+    let persons = null;
+
+    if (this.state.showPersons) {
+      persons = (<div>
+        <UserInput
+          name={this.state.userinput[0].name}
+          changed={this.newUserNameHandler} />
+        <UserOutput
+          name={this.state.userinput[1].name} />
+        <UserOutput
+          name={this.state.userinput[2].name} />
+        <UserOutput
+          username={this.state.userinput[0].username} />
+      </div> );
+    }
+
+
     return (
       <div className="App">
         <button style={style}
           onClick={this.togglePersonsHandler}>Toggle People</button>
-      { 
-        this.state.showPersons ?
-        <div>
-          <UserInput
-            name={this.state.userinput[0].name}
-            changed={this.newUserNameHandler} />
-          <UserOutput
-            name={this.state.userinput[1].name} />
-          <UserOutput
-            name={this.state.userinput[2].name} />
-          <UserOutput
-            username={this.state.userinput[0].username} />
-        </div> 
-        : null
-      }
+          {persons}
+        
+
       <button style={style}
       onClick={() => this.userNameHandler('JB')}>Change UserName</button>
           <div>
@@ -87,3 +93,20 @@ class App extends Component {
 }
 
 export default App;
+
+
+// {
+//   this.state.showPersons ?
+//     <div>
+//       <UserInput
+//         name={this.state.userinput[0].name}
+//         changed={this.newUserNameHandler} />
+//       <UserOutput
+//         name={this.state.userinput[1].name} />
+//       <UserOutput
+//         name={this.state.userinput[2].name} />
+//       <UserOutput
+//         username={this.state.userinput[0].username} />
+//     </div>
+//     : null
+// }
