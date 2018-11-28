@@ -53,7 +53,8 @@ class App extends Component {
     let persons = null;
 
     if (this.state.showPersons) {
-      persons = (<div>
+      persons = (
+      <div>
         <UserInput
           name={this.state.userinput[0].name}
           changed={this.newUserNameHandler} />
@@ -63,7 +64,8 @@ class App extends Component {
           name={this.state.userinput[2].name} />
         <UserOutput
           username={this.state.userinput[0].username} />
-      </div> );
+      </div> 
+      );
     }
 
 
